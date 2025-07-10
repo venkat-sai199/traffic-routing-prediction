@@ -1,0 +1,76 @@
+{% load static %} <!-- Load static files for background image -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Training Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("{% static 'bg3.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        h2, h4 {
+            text-align: center;
+        }
+
+        .result-section {
+            margin-top: 30px;
+        }
+
+        .btn-home {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .btn-home:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Model Training Results</h2>
+
+    {% comment %} <h4>Vehicle Count Prediction Model Metrics:</h4>
+    <p>Mean Absolute Error (MAE): {{ mae_vehicle }}</p>
+    <p>Mean Squared Error (MSE): {{ mse_vehicle }}</p>
+    <p>R-Squared (R²): {{ r2_vehicle }}</p>
+
+    <h4>Route Prediction Model Accuracy:</h4>
+    <p>Accuracy: {{ accuracy_route }}%</p> {% endcomment %}
+
+    <h4>Model Performance Graphs:</h4>
+    <div class="result-section">
+        <img src="data:image/png;base64,{{ img_data }}" alt="Model Performance Graph" class="img-fluid">
+    </div>
+
+    <!-- Back to Home Button -->
+    <a href="{% url 'home' %}" class="btn-home">Back to Home</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
