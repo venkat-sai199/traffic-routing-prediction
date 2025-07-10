@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Dataset</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            padding: 20px;
+            background-image: url("{% static 'bg3.jpg' %}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            color: white;
+        }
+        .table-container {
+            max-height: 80vh;
+            overflow-y: auto;
+            border: 1px solid #ddd;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.8); /* Light semi-transparent background */
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            padding: 10px;
+            margin: 10px auto;
+            background: #28a745;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #218838;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Traffic Dataset View</h1> 
+        <a href="/" class="btn">Go to Home</a>
+        <div class="table-container">
+            {{ dataset_html|safe }}
+        </div>
+    </div>
+</body>
+</html>
